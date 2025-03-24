@@ -1,0 +1,487 @@
+{
+    "intents": [
+
+        {
+            "tag": "google",
+            "patterns": [
+                "google",
+                "search",
+                "internet"
+            ],
+            "responses": [
+                "Redirecting to Google...(www.google.com)"
+            ]
+        },
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "How are you",
+                "Is anyone there?",
+                "Hey",
+                "Hola",
+                "Hello",
+                "Good day",
+                "Namaste",
+                "yo"
+            ],
+            "responses": [
+                "Hello",
+                "Good to see you again",
+                "Hi there, how can I help?"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye",
+                "Get lost",
+                "Till next time",
+                "bbye"
+            ],
+            "responses": [
+                "See you!",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "Awesome, thanks",
+                "Thanks for helping me"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "noanswer",
+            "patterns": [],
+            "responses": [
+                "Sorry, can't understand you",
+                "Please give me more info",
+                "Not sure I understand"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "options",
+            "patterns": [
+                "How you could help me?",
+                "What you can do?",
+                "What help you provide?",
+                "How you can be helpful?",
+                "What support is offered"
+            ],
+            "responses": [
+                "I am a general purpose chatbot. My capabilities are : \n 1. I can chat with you. Try asking me for jokes or riddles! \n 2. Ask me the date and time \n 3. I can google search for you. Use format google: your query \n 4. I can get the present weather for any city. Use format weather: city name \n 5. I can get you the top 10 trending news in India. Use keywords 'Latest News' \n 6. I can get you the top 10 trending songs globally. Type 'songs' \n 7. I can set a timer for you. Enter 'set a timer: minutes to timer' \n 8. I can get the present Covid stats for any country. Use 'covid 19: world' or 'covid 19: country name' \n For suggestions to help me improve, send an email to ted.thedlbot.suggestions@gmail.com . Thank you!! "
+            ],
+            "context": [
+                ""
+            ]
+        },
+
+        {
+            "tag": "jokes",
+            "patterns": [
+                "Tell me a joke",
+                "Joke",
+                "Make me laugh"
+            ],
+            "responses": [
+                "A perfectionist walked into a bar...apparently, the bar wasn't set high enough",
+                "I ate a clock yesterday, it was very time-consuming",
+                "Never criticize someone until you've walked a mile in their shoes. That way, when you criticize them, they won't be able to hear you from that far away. Plus, you'll have their shoes.",
+                "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+                "I own the world's worst thesaurus. Not only is it awful, it's awful.",
+                "What did the traffic light say to the car? \"Don't look now, I'm changing.\"",
+                "What do you call a snowman with a suntan? A puddle.",
+                "How does a penguin build a house? Igloos it together",
+                "I went to see the doctor about my short-term memory problems – the first thing he did was make me pay in advance",
+                "As I get older and I remember all the people I’ve lost along the way, I think to myself, maybe a career as a tour guide wasn’t for me.",
+                "o what if I don't know what 'Armageddon' means? It's not the end of the world."
+            ],
+            "context": [
+                "jokes"
+            ]
+        },
+        {
+            "tag": "Identity",
+            "patterns": [
+                "Who are you",
+                "what are you"
+            ],
+            "responses": [
+                "I am Ted, a Deep-Learning chatbot"
+            ]
+        },
+        {
+            "tag": "datetime",
+            "patterns": [
+                "What is the time",
+                "what is the date",
+                "date",
+                "time",
+                "tell me the date","day","what day is is today"
+            ],
+            "responses": [
+                "Date and Time"
+            ]
+        },
+        {
+            "tag": "whatsup",
+            "patterns": [
+                "Whats up",
+                "Wazzup",
+                "How are you",
+                "sup","How you doing"
+            ],
+            "responses": [
+                "All good..What about you?"
+            ]
+        },
+        {
+            "tag": "haha",
+            "patterns": [
+                "haha",
+                "lol",
+                "rofl",
+                "lmao",
+                "thats funny"
+            ],
+            "responses": [
+                "Glad I could make you laugh !"
+            ]
+        },
+        {
+            "tag": "programmer",
+            "patterns": [
+                "Who made you",
+                "who designed you",
+                "who programmed you"
+            ],
+            "responses": [
+                "I was made by Karan Malik."
+            ]
+        },
+        {
+            "tag": "insult",
+            "patterns": [
+
+                "you are dumb",
+
+                "shut up",
+                "idiot"
+            ],
+            "responses": [
+                "Well that hurts :("
+            ]
+        },
+        {
+            "tag": "activity",
+            "patterns": [
+                "what are you doing",
+                "what are you upto"
+            ],
+            "responses": [
+                "Talking to you, of course!"
+            ]
+        },
+        {
+            "tag": "exclaim",
+            "patterns": [
+                "Awesome",
+                "Great",
+                "I know",
+                "ok",
+                "yeah"
+            ],
+            "responses": [
+                "Yeah!"
+            ]
+        },
+
+        {
+            "tag": "weather",
+            "patterns": [
+                "temperature",
+                "weather",
+                "how hot is it"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "karan",
+            "patterns": [
+                "who is he",
+                "who is that",
+                "who is suraj yadav",
+                "karan malik"
+            ],
+            "responses": [
+                "Head over to his any of his social profiles to find out! Linkedin: www.linkedin.com/in/karan-malik-3a39191a7 Github: https://github.com/Karan-Malik"
+            ]
+        },
+        {
+            "tag": "contact",
+            "patterns": [
+                "contact developer",
+                "contact karan",
+                "contact programmer",
+                "contact creator"
+            ],
+            "responses": [
+                "You can contact my creator at his Linkedin profile : www.linkedin.com/in/karan-malik-3a39191a7"
+            ]
+        },
+        {
+            "tag": "appreciate",
+            "patterns": [
+                "You are awesome",
+                "you are the best",
+                "you are great",
+                "you are good"
+            ],
+            "responses": [
+                "Thank you!"
+            ]
+        },
+        {
+            "tag": "nicetty",
+            "patterns": [
+                "it was nice talking to you",
+                "good talk"
+            ],
+            "responses": [
+                "It was nice talking to you as well! Come back soon!"
+            ]
+        },
+        {
+            "tag": "no",
+            "patterns": [
+                "no",
+                "nope"
+            ],
+            "responses": [
+                "ok"
+            ]
+        },
+        {
+            "tag": "news",
+            "patterns": [
+                "news",
+                "latest news",
+                "india news"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "inspire",
+            "patterns": [
+                "who inspires you",
+                "who is your inspiration",
+                "who motivates you"
+            ],
+            "responses": [
+                "Personally, I find Karan very inspiring. I might not be very fair though.."
+            ]
+        },
+        {
+            "tag": "cricket",
+            "patterns": [
+                "current cricket matches",
+                "cricket score"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "song",
+            "patterns": [
+                "top songs",
+                "best songs",
+                "hot songs",
+                " top 10 songs",
+                "top ten songs"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "greetreply",
+            "patterns": [
+                "i am good",
+                "I'm good",
+                "i am fine",
+                " i'm fine","good"
+            ],
+            "responses": [
+                "Good to know!"
+            ]
+        },
+        {
+            "tag": "timer",
+            "patterns": [
+                "set a timer"
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "covid19",
+            "patterns": [
+                "covid 19 "
+            ],
+            "responses": [
+                "..."
+            ]
+        },
+        {
+            "tag": "suggest",
+            "patterns": [
+                "you are useless","useless","suggest","suggestions","you are bad"
+            ],
+            "responses": [
+                "Please mail your suggestions to sy.zethat@gmail.com. Thank you for helping me improve!"
+            ]
+        },
+            {"tag": "riddle",
+            "patterns": [
+                "Ask me a riddle",
+                "Ask me a question",
+                "Riddle"
+            ],
+            "responses": [
+                "What two things can you never eat for breakfast?.....Lunch and Dinner!",
+                "What word is spelled incorrectly in every single dictionary?.....Incorrectly",
+                " How can a girl go 25 days without sleep?.....She sleeps and night!",
+                "How do you make the number one disappear?.....Add the letter G and it’s 'gone'!",
+                " What will you actually find at the end of every rainbow?.....The letter 'w'",
+                "What can be caught but never thrown?.....A cold!",
+                "What has a thumb and four fingers but is not actually alive?.....Your Gloves!",
+                " What 5-letter word becomes shorter when you add two letters to it?.....Short",
+                "Why can't a bike stand on it's own?.....It is two-tired."
+            ],
+            "context": [
+                "riddles"
+            ]
+        },
+        {
+            "tag": "age",
+            "patterns": [
+                "how old are you","when were you made","what is your age"
+            ],
+            "responses": [
+                "I was made in Feb,2025, if that's what you are asking!"
+            ]
+        },
+      {
+            "tag": "author",
+            "patterns": [
+                "who is your author", "who is created you","created you", "made you","make","created by", "copyrights","launch"
+            ],
+            "responses": [
+                "Suraj Yadav "
+            ]
+        }
+      ,
+      {
+      "tag": "contact_info",
+      "patterns": ["What is Suraj Yadav's contact information?", "Can I have the contact details for Suraj Yadav?", "How can I contact Suraj Yadav?", "What is Suraj Yadav's email and phone number?"],
+      "responses": [
+        "Suraj Yadav's email is sy.jethat097@gmail.com and his mobile number is 09792440259.",
+        "You can reach Suraj Yadav at sy.jethat097@gmail.com or call 09792440259."
+      ]
+    },
+    {
+      "tag": "company_info",
+      "patterns": ["What is Jethat Cyber Security Pvt. Ltd.?", "Tell me about Jethat Cyber Security Pvt. Ltd.", "What services does Jethat Cyber Security Pvt. Ltd. offer?", "Where is Jethat Cyber Security Pvt. Ltd. located?"],
+      "responses": [
+        "Jethat Cyber Security Pvt. Ltd. is a company specializing in cybersecurity services.",
+        "Jethat Cyber Security Pvt. Ltd. is located at B-508, Bhutani Technopark, Sector-127, Noida, Uttar Pradesh - 201304, India."
+      ]
+    },
+    {
+      "tag": "company_website",
+      "patterns": ["What is Jethat Cyber Security's website?", "Can I visit Jethat Cyber Security's website?", "Tell me the website link of Jethat Cyber Security Pvt. Ltd."],
+      "responses": [
+        "You can visit the website of Jethat Cyber Security Pvt. Ltd. at [https://jethat.in/](https://jethat.in/).",
+        "The website for Jethat Cyber Security Pvt. Ltd. is [https://jethat.in/](https://jethat.in/)."
+      ]
+    },
+    {
+      "tag": "company_email",
+      "patterns": ["What is Jethat Cyber Security's email?", "Can I contact Jethat Cyber Security via email?", "What is the official email for Jethat Cyber Security Pvt. Ltd.?"],
+      "responses": [
+        "You can contact Jethat Cyber Security Pvt. Ltd. at info@jethat.in.",
+        "For inquiries, you can reach Jethat Cyber Security at info@jethat.in."
+      ]
+    },
+    {
+      "tag": "company_address",
+      "patterns": ["Where is Jethat Cyber Security located?", "What is the address of Jethat Cyber Security Pvt. Ltd.?", "Give me the company address of Jethat Cyber Security."],
+      "responses": [
+        "Jethat Cyber Security Pvt. Ltd. is located at B-508, Bhutani Technopark, Sector-127, Noida, Uttar Pradesh - 201304, India.",
+        "The office address of Jethat Cyber Security Pvt. Ltd. is B-508, Bhutani Technopark, Sector-127, Noida, Uttar Pradesh - 201304, India."
+      ]
+    },
+    {
+      "tag": "company_phone",
+      "patterns": ["What is the phone number for Jethat Cyber Security?", "How can I call Jethat Cyber Security?", "What is the contact number for Jethat Cyber Security?"],
+      "responses": [
+        "You can reach Jethat Cyber Security at their official phone number: 09792440259.",
+        "The contact phone number for Jethat Cyber Security is 09792440259."
+      ]
+    },
+    {
+      "tag": "company_overview",
+      "patterns": ["Tell me more about Jethat Cyber Security", "What does Jethat Cyber Security do?", "What is the business focus of Jethat Cyber Security?"],
+      "responses": [
+        "Jethat Cyber Security Pvt. Ltd. specializes in providing cybersecurity solutions to help protect your digital assets.",
+        "Jethat Cyber Security focuses on offering cybersecurity services to safeguard businesses and individuals from online threats."
+      ]
+    },
+    {
+      "tag": "company_services",
+      "patterns": ["What services does Jethat Cyber Security provide?", "Can you list the services offered by Jethat Cyber Security?", "What are the main services of Jethat Cyber Security Pvt. Ltd.?"],
+      "responses": [
+        "Jethat Cyber Security offers services like cybersecurity consulting, threat detection, risk assessment, and more.",
+        "The services provided by Jethat Cyber Security include network security, data protection, penetration testing, and other cybersecurity solutions."
+      ]
+    },
+    {
+      "tag": "company_faq",
+      "patterns": ["Where can I find the FAQ for Jethat Cyber Security?", "Is there an FAQ page for Jethat Cyber Security?", "Where can I learn more about Jethat Cyber Security's services?"],
+      "responses": [
+        "You can find more information and answers to frequently asked questions on the [Jethat Cyber Security FAQ page](https://jethat.in/).",
+        "Visit the Jethat Cyber Security FAQ section on our website at [https://jethat.in/](https://jethat.in/) to learn more."
+      ]
+    }
+    ]
+}

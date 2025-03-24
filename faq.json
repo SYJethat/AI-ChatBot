@@ -1,0 +1,146 @@
+{
+    "q1": {
+        "question": {
+            "en": "What is cybersecurity?",
+            "hi": "साइबर सुरक्षा क्या है?",
+            "ur": "سائبر سیکیورٹی کیا ہے؟",
+            "sa": "साइबरसुरक्षा किम्?",
+            "es": "¿Qué es la ciberseguridad?",
+            "fr": "Qu’est-ce que la cybersécurité ?",
+            "de": "Was ist Cybersicherheit?",
+            "ja": "サイバーセキュリティとは何ですか？",
+            "bho": "साइबर सुरक्षा का बा?"
+        },
+        "answer": {
+            "en": "Cybersecurity encompasses technologies, processes, and practices designed to protect systems, networks, devices, and data from unauthorized access, cyberattacks, or damage.",
+            "hi": "साइबर सुरक्षा में वे तकनीकें, प्रक्रियाएँ और प्रथाएँ शामिल हैं जो सिस्टम, नेटवर्क, उपकरणों और डेटा को अनधिकृत पहुँच, साइबर हमलों या क्षति से बचाने के लिए डिज़ाइन की गई हैं।",
+            "ur": "سائبر سیکیورٹی میں وہ ٹیکنالوجیز، عمل اور طریقے شامل ہیں جو سسٹمز، نیٹ ورکس، آلات اور ڈیٹا کو غیر مجاز رسائی، سائبر حملوں یا نقصان سے بچانے کے لیے بنائے گئے ہیں۔",
+            "sa": "साइबरसुरक्षा संनादति यत् तकनीकाः प्रक्रियाः च प्रथाः संनादं संजालं उपकरणं डेटा च अनधिकृतप्रवेशात् साइबरआक्रमणेभ्यः क्षतितः वा संरक्षति।",
+            "es": "La ciberseguridad abarca tecnologías, procesos y prácticas diseñados para proteger sistemas, redes, dispositivos y datos contra accesos no autorizados, ciberataques o daños.",
+            "fr": "La cybersécurité regroupe les technologies, processus et pratiques visant à protéger les systèmes, réseaux, appareils et données contre les accès non autorisés, les cyberattaques ou les dommages.",
+            "de": "Cybersicherheit umfasst Technologien, Prozesse und Praktiken zum Schutz von Systemen, Netzwerken, Geräten und Daten vor unbefugtem Zugriff, Cyberangriffen oder Schäden.",
+            "ja": "サイバーセキュリティは、システム、ネットワーク、デバイス、データを不正アクセス、サイバー攻撃、または損害から保護するために設計された技術、プロセス、実践を包括します。",
+            "bho": "साइबर सुरक्षा में ओ तकनीक, प्रक्रिया आ प्रथा शामिल बा जे सिस्टम, नेटवर्क, डिवाइस आ डेटा के अनधिकृत पहुँच, साइबर हमला या नुकसान से बचावे खातिर बनावल गइल बा।"
+        }
+    },
+    "q2": {
+        "question": {
+            "en": "How to protect my data?",
+            "hi": "मेरे डेटा की सुरक्षा कैसे करें?",
+            "ur": "میرے ڈیٹا کی حفاظت کیسے کریں؟",
+            "sa": "मम डेटस्य संरक्षणं कथम्?",
+            "es": "¿Cómo proteger mis datos?",
+            "fr": "Comment protéger mes données ?",
+            "de": "Wie schütze ich meine Daten?",
+            "ja": "データをどのように保護しますか？",
+            "bho": "हमर डेटा के सुरक्षा कइसे करीं?"
+        },
+        "answer": {
+            "en": "Protect your data by using strong, unique passwords, enabling two-factor authentication (2FA), avoiding public Wi-Fi for sensitive tasks, regularly backing up data, and updating software.",
+            "hi": "अपने डेटा की सुरक्षा के लिए मजबूत, अद्वितीय पासवर्ड का उपयोग करें, दो-कारक प्रमाणीकरण (2FA) सक्षम करें, संवेदनशील कार्यों के लिए सार्वजनिक वाई-फाई से बचें, नियमित रूप से डेटा का बैकअप लें, और सॉफ्टवेयर को अपडेट करें।",
+            "ur": "اپنے ڈیٹا کی حفاظت کے لیے مضبوط، منفرد پاس ورڈز استعمال کریں، دو عنصری تصدیق (2FA) کو فعال کریں، حساس کاموں کے لیے عوامی وائی فائی سے پرہیز کریں، باقاعدگی سے ڈیٹا کا بیک اپ لیں، اور سافٹ ویئر کو اپ ڈیٹ کریں۔",
+            "sa": "स्व डेटस्य संरक्षणाय दृढं अद्वितीयं कूटशब्दं प्रयोगतु, द्विकारकप्रमाणनं (2FA) सक्रियतु, संवेदनशीलकार्येभ्यः सार्वजनिकं वाई-फाई परिहरतु, नियमेन डेटस्य संनादनं कुरु, संनादपत्रं च नवीकुरुतु।",
+            "es": "Protege tus datos usando contraseñas fuertes y únicas, habilitando la autenticación de dos factores (2FA), evitando Wi-Fi público para tareas sensibles, haciendo copias de seguridad regulares y actualizando el software.",
+            "fr": "Protégez vos données en utilisant des mots de passe forts et uniques, en activant l’authentification à deux facteurs (2FA), en évitant le Wi-Fi public pour les tâches sensibles, en sauvegardant régulièrement vos données et en mettant à jour vos logiciels。",
+            "de": "Schützen Sie Ihre Daten mit starken, einzigartigen Passwörtern, aktivieren Sie die Zwei-Faktor-Authentifizierung (2FA), vermeiden Sie öffentliches WLAN für sensible Aufgaben, sichern Sie regelmäßig Daten und aktualisieren Sie Software.",
+            "ja": "データを保護するには、強力でユニークなパスワードを使用し、二要素認証（2FA）を有効にし、機密性の高い作業で公共Wi-Fiを避け、定期的にデータをバックアップし、ソフトウェアを更新します。",
+            "bho": "आपन डेटा के सुरक्षित करे खातिर मजबूत आ अनोखा पासवर्ड यूज करीं, दू-कारक प्रमाणन (2FA) चालू करीं, संवेदनशील काम खातिर सार्वजनिक वाई-फाई से बचीं, नियमित डेटा के बैकअप लीजिए, आ सॉफ्टवेयर अपडेट करीं।"
+        }
+    },
+    "q3": {
+        "question": {
+            "en": "What to do if hacked?",
+            "hi": "अगर हैक हो जाए तो क्या करें?",
+            "ur": "اگر ہیک ہو جائے تو کیا کرنا چاہیے؟",
+            "sa": "यदि संनादभङ्गः भवति तत् किम्?",
+            "es": "¿Qué hacer si me hackean?",
+            "fr": "Que faire si je suis piraté ?",
+            "de": "Was tun, wenn ich gehackt werde?",
+            "ja": "ハッキングされた場合、何をすべきですか？",
+            "bho": "अगर हैक हो जाई त का करीं?"
+        },
+        "answer": {
+            "en": "If hacked, disconnect from the internet, change affected passwords from a secure device, notify your bank or service providers, run antivirus scans, and report to cybersecurity professionals.",
+            "hi": "यदि हैक हो जाए, तो इंटरनेट से डिस्कनेक्ट करें, सुरक्षित डिवाइस से प्रभावित पासवर्ड बदलें, अपने बैंक या सेवा प्रदाताओं को सूचित करें, एंटीवायरस स्कैन चलाएं, और साइबर सुरक्षा पेशेवरों को रिपोर्ट करें।",
+            "ur": "اگر ہیک ہو جائیں تو انٹرنیٹ سے منقطع کریں، محفوظ ڈیوائس سے متاثرہ پاس ورڈز تبدیل کریں، اپنے بینک یا سروس فراہم کنندگان کو مطلع کریں، اینٹی وائرس اسکین چلائیں، اور سائبر سیکیورٹی ماہرین کو رپورٹ کریں۔",
+            "sa": "यदि संनादभङ्गः भवति तत् संजालात् वियोजतु, सुरक्षितोपकरणात् प्रभावितं कूटशब्दं परिवर्ततु, स्व बैंकेन सेवा प्रदातृभ्यः सूचयतु, एंटीवायरस संनादनं चalayतु, साइबरसुरक्षाविशेषज्ञेभ्यः संनादतु।",
+            "es": "Si te hackean, desconéctate de internet, cambia las contraseñas afectadas desde un dispositivo seguro, notifica a tu banco o proveedores de servicios, ejecuta escaneos antivirus y reporta a profesionales de ciberseguridad.",
+            "fr": "En cas de piratage, déconnectez-vous d’internet, changez les mots de passe affectés depuis un appareil sécurisé, informez votre banque ou vos fournisseurs de services, lancez des analyses antivirus et signalez aux professionnels de la cybersécurité.",
+            "de": "Bei einem Hack trennen Sie die Internetverbindung, ändern Sie betroffene Passwörter von einem sicheren Gerät aus, benachrichtigen Sie Ihre Bank oder Dienstleister, führen Sie Antiviren-Scans durch und melden Sie Cybersecurity-Experten.",
+            "ja": "ハッキングされた場合、インターネットから切断し、安全なデバイスから影響を受けたパスワードを変更し、銀行やサービスプロバイダーに通知し、アンチウイルススキャンを実行し、サイバーセキュリティ専門家に報告してください。",
+            "bho": "अगर हैक हो जाई त इंटरनेट से कट जाईं, सुरक्षित डिवाइस से प्रभावित पासवर्ड बदल दीं, बैंक या सेवा प्रदाता के बताईं, एंटीवायरस स्कैन चलाईं, आ साइबर सुरक्षा विशेषज्ञ के रिपोर्ट करीं।"
+        }
+    },
+    "q4": {
+        "question": {
+            "en": "What is phishing?",
+            "hi": "फ़िशिंग क्या है?",
+            "ur": "فشنگ کیا ہے؟",
+            "sa": "फिशिंग किम्?",
+            "es": "¿Qué es el phishing?",
+            "fr": "Qu’est-ce que le phishing ?",
+            "de": "Was ist Phishing?",
+            "ja": "フィッシングとは何ですか？",
+            "bho": "फ़िशिंग का बा?"
+        },
+        "answer": {
+            "en": "Phishing is a social engineering attack where cybercriminals impersonate legitimate entities to trick users into revealing sensitive information like passwords or credit card details.",
+            "hi": "फ़िशिंग एक सामाजिक इंजीनियरिंग हमला है जिसमें साइबर अपराधी वैध संस्थाओं की नकल करके उपयोगकर्ताओं को पासवर्ड या क्रेडिट कार्ड विवरण जैसी संवेदनशील जानकारी प्रकट करने के लिए धोखा देते हैं।",
+            "ur": "فشنگ ایک سماجی انجینئرنگ حملہ ہے جہاں سائبر مجرم جائز اداروں کی نقل کرکے صارفین کو پاس ورڈز یا کریڈٹ کارڈ کی تفصیلات جیسی حساس معلومات ظاہر کرنے کے لیے دھوکہ دیتے ہیں۔",
+            "sa": "फिशिंग सामाजिक अभियान्त्रिक आक्रमणमस्ति यत्र साइबर अपराधिनः वैधानिक संस्थानानां अनुकरणं कृत्वा संवेदनशीलां जानकारीं प्रकाशनाय प्रयोगकर्तॄन् प्रलोभति।",
+            "es": "El phishing es un ataque de ingeniería social donde cibercriminales se hacen pasar por entidades legítimas para engañar a los usuarios y obtener información sensible como contraseñas o detalles de tarjetas de crédito.",
+            "fr": "Le phishing est une attaque d’ingénierie sociale où des cybercriminels se font passer pour des entités légitimes pour inciter les utilisateurs à révéler des informations sensibles comme des mots de passe ou des détails de carte de crédit。",
+            "de": "Phishing ist ein Social-Engineering-Angriff, bei dem Cyberkriminelle sich als legitime Einheiten ausgeben, um Nutzer dazu zu bringen, sensible Informationen wie Passwörter oder Kreditkartendaten preiszugeben。",
+            "ja": "フィッシングは、サイバー犯罪者が正当な組織を装い、ユーザーを騙してパスワードやクレジットカード情報などの機密情報を開示させるソーシャルエンジニアリング攻撃です。",
+            "bho": "फ़िशिंग एगो सामाजिक इंजीनियरिंग हमला बा जे में साइबर अपराधी वैध संस्था के नकल करके यूजर के पासवर्ड या क्रेडिट कार्ड डिटेल जइसी संवेदनशील जानकारी निकाले खातिर धोखा देत बा।"
+        }
+    },
+    "q5": {
+        "question": {
+            "en": "How to recognize malware?",
+            "hi": "मैलवेयर को कैसे पहचानें?",
+            "ur": "میلویئر کو کیسے شناخت کریں؟",
+            "sa": "मैलवेयरं कथं संनादति?",
+            "es": "¿Cómo reconocer el malware?",
+            "fr": "Comment reconnaître un malware ?",
+            "de": "Wie erkenne ich Malware?",
+            "ja": "マルウェアをどのように認識しますか？",
+            "bho": "मैलवेयर के कइसे पहचानीं?"
+        },
+        "answer": {
+            "en": "Recognize malware by monitoring for slow device performance, frequent crashes, unexpected pop-ups, high network usage, or unfamiliar processes in task manager.",
+            "hi": "मैलवेयर को धीमी डिवाइस गति, बार-बार क्रैश, अप्रत्याशित पॉप-अप, उच्च नेटवर्क उपयोग, या टास्क मैनेजर में अपरिचित प्रक्रियाओं से पहचानें।",
+            "ur": "میلویئر کو سست ڈیوائس کی کارکردگی، بار بار کریش، غیر متوقع پاپ اپس، زیادہ نیٹ ورک استعمال، یا ٹاسک مینیجر میں نامعلوم عمل سے پہچانیں۔",
+            "sa": "मैलवेयरं मन्दं उपकरणगतिं, बारंबारं संनादभङ्गं, अप्रत्याशितं पॉप-अपं, उच्चं संजालप्रयोगं, टास्क मैनेजर च अपरिचितं प्रक्रियाः इति संनादति।",
+            "es": "Reconoce el malware vigilando un rendimiento lento del dispositivo, cierres frecuentes, ventanas emergentes inesperadas, alto uso de la red o procesos desconocidos en el administrador de tareas.",
+            "fr": "Repérez un malware en surveillant une lenteur de l’appareil, des plantages fréquents, des pop-ups inattendus, une utilisation élevée du réseau ou des processus inconnus dans le gestionnaire des tâches。",
+            "de": "Erkennen Sie Malware durch langsame Geräteleistung, häufige Abstürze, unerwartete Pop-ups, hohe Netzwerkauslastung oder unbekannte Prozesse im Task-Manager。",
+            "ja": "マルウェアは、デバイスの遅いパフォーマンス、頻繁なクラッシュ、予期しないポップアップ、高いネットワーク使用量、タスクマネージャー内の不明なプロセスで認識できます。",
+            "bho": "मैलवेयर के धीमा डिवाइस गति, बार-बार क्रैश, अप्रत्याशित पॉप-अप, जादा नेटवर्क यूज, या टास्क मैनेजर में अनजान प्रक्रिया से पहचानीं।"
+        }
+    },
+    "q6": {
+        "question": {
+            "en": "What is encryption?",
+            "hi": "एन्क्रिप्शन क्या है?",
+            "ur": "انکرپشن کیا ہے؟",
+            "sa": "एन्क्रिप्शन किम्?",
+            "es": "¿Qué es la encriptación?",
+            "fr": "Qu’est-ce que le chiffrement ?",
+            "de": "Was ist Verschlüsselung?",
+            "ja": "暗号化とは何ですか？",
+            "bho": "एन्क्रिप्शन का बा?"
+        },
+        "answer": {
+            "en": "Encryption is a security method that transforms readable data into an unreadable format using algorithms and keys, ensuring only authorized parties can access it.",
+            "hi": "एन्क्रिप्शन एक सुरक्षा विधि है जो पठनीय डेटा को एल्गोरिदम और कुंजियों का उपयोग करके अपठनीय प्रारूप में बदल देती है, जिससे केवल अधिकृत पक्ष ही इसे एक्सेस कर सकते हैं।",
+            "ur": "انکرپشن ایک سیکیورٹی طریقہ ہے جو قابل مطالعہ ڈیٹا کو الگورتھم اور چابیوں کا استعمال کرکے ناقابل مطالعہ شکل میں تبدیل کرتا ہے، تاکہ صرف مجاز فریق ہی اس تک رسائی حاصل کر سکیں۔",
+            "sa": "एन्क्रिप्शन सुरक्षा विधिः अस्ति यत् पठनीयं डेटं एल्गोरिदम कूटशब्दैः च अपठनीयं रूपं परिवर्तति, येन केवलं संनादिताः पक्षाः एतत् संनादति।",
+            "es": "La encriptación es un método de seguridad que transforma datos legibles en un formato ilegible usando algoritmos y claves, asegurando que solo las partes autorizadas puedan acceder a ellos。",
+            "fr": "Le chiffrement est une méthode de sécurité qui transforme des données lisibles en un format illisible à l’aide d’algorithmes et de clés, garantissant que seules les parties autorisées puissent y accéder。",
+            "de": "Verschlüsselung ist eine Sicherheitsmethode, die lesbare Daten mithilfe von Algorithmen und Schlüsseln in ein unlesbares Format umwandelt, sodass nur autorisierte Parteien darauf zugreifen können。",
+            "ja": "暗号化は、アルゴリズムとキーを使って読み取り可能なデータを読み取り不可能な形式に変換するセキュリティ手法で、許可された当事者のみがアクセスできるようにします。",
+            "bho": "एन्क्रिप्शन एगो सुरक्षा तरीका बा जे पढ़े जा सकत डेटा के एल्गोरिदम आ कुंजी के यूज करके ना पढ़े जा सकत रूप में बदल देत बा, ताकि सिर्फ अधिकृत लोग ही एके एक्सेस कर सके।"
+        }
+    }
+}

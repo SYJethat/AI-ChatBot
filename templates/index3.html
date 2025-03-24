@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Jethat Cyber Security</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', 'Noto Sans', sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+
+        .chat-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .chatbox {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            height: 450px;
+            max-width: 90vw;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 999;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-header {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-header .close-btn {
+            font-size: 18px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .chat-header .close-btn:hover { opacity: 0.7; }
+
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            background: rgba(30, 41, 59, 0.8);
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 rgba(30, 41, 59, 0.8);
+            position: relative;
+        }
+
+        .chat-footer {
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .chat-footer input[type="text"] {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            outline: none;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+        }
+
+        .chat-footer input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+
+        .chat-footer input::placeholder {
+            color: #94a3b8;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+
+        .send-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-btn:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 10px 14px 20px 14px;
+            border-radius: 12px;
+            max-width: 80%;
+            font-size: 13px;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease-in;
+            position: relative;
+        }
+
+        .message::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            bottom: -5px;
+            transform: rotate(45deg);
+        }
+
+        .user {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            color: white;
+            margin-left: auto;
+            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+        }
+
+        .user::after {
+            right: 10px;
+            background: #3b82f6;
+        }
+
+        .bot {
+            background: linear-gradient(135deg, #ffffff, #f1f5f9);
+            color: #1e293b;
+            margin-right: auto;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .bot::after {
+            left: 10px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-width: 0 0 1px 1px;
+        }
+
+        .timestamp {
+            font-size: 10px;
+            color: #64748b;
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            opacity: 0.8;
+        }
+
+        .user .timestamp {
+            color: #bfdbfe;
+        }
+
+        .typing-indicator {
+            color: #94a3b8;
+            font-style: italic;
+            opacity: 0.8;
+            margin: 10px 0 5px 0;
+            text-align: center;
+        }
+
+        .lang-option, .mode-option, .faq-option {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 4px;
+        }
+
+        .lang-option:hover, .mode-option:hover, .faq-option:hover {
+            color: white;
+            background: #3b82f6;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+        }
+
+        .faq-option.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .more-option {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 4px;
+        }
+
+        .more-option:hover {
+            color: white;
+            background: #3b82f6;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+        }
+
+        .file-input-container {
+            margin: 10px 0;
+        }
+
+        .file-input-container input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+        }
+
+        .slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+
+        .slide-down {
+            animation: slideDown 0.3s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(100%); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .chatbox {
+                width: 100%;
+                max-width: 100vw;
+                height: 90vh;
+                bottom: 0;
+                right: 0;
+                border-radius: 20px 20px 0 0;
+                padding: 10px;
+            }
+            .chat-icon { bottom: 15px; right: 15px; width: 45px; height: 45px; font-size: 22px; }
+            .chat-footer { flex-wrap: wrap; gap: 6px; padding: 10px 12px; }
+            .chat-footer input { flex: 1 1 100%; }
+            .send-btn { width: 32px; height: 32px; }
+            .message { font-size: 12px; }
+            .chat-header { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-icon" onclick="toggleChat()">💬</div>
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            <span>AI Assistant - Jethat Cyber Security</span>
+            <span class="close-btn" onclick="toggleChat()">✕</span>
+        </div>
+        <div class="chat-body" id="messages">
+            <div class="message bot slide-up" id="initial-message">
+                Welcome! Please select your preferred language:<br>
+                <span class="lang-option" onclick="selectLanguage('en')">English</span><br>
+                <span class="lang-option" onclick="selectLanguage('hi')">हिन्दी</span><br>
+                <span class="lang-option" onclick="selectLanguage('ur')">اردو</span><br>
+                <span class="more-option" onclick="showMoreLanguages()">More...</span>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user_input" placeholder="Type a message..." onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        const synthesis = window.speechSynthesis;
+        let selectedLang = null;
+        let selectedMode = null;
+        let isTyping = false;
+        let faqData = {};
+        let formSessionId = null;
+
+        function toggleChat() {
+            const chatbox = document.getElementById("chatbox");
+            chatbox.style.display = (chatbox.style.display === "none" || chatbox.style.display === "") ? "flex" : "none";
+        }
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+        }
+
+        function resetToLanguageSelection() {
+            $("#messages").html(`
+                <div class="message bot slide-up" id="initial-message">
+                    Welcome! Please select your preferred language:<br>
+                    <span class="lang-option" onclick="selectLanguage('en')">English</span><br>
+                    <span class="lang-option" onclick="selectLanguage('hi')">हिन्दी</span><br>
+                    <span class="lang-option" onclick="selectLanguage('ur')">اردو</span><br>
+                    <span class="more-option" onclick="showMoreLanguages()">More...</span>
+                </div>
+            `);
+            selectedLang = null;
+            selectedMode = null;
+            formSessionId = null;
+            $("#user_input").prop('disabled', true);
+        }
+
+        function showMoreLanguages() {
+            const initialMessage = document.getElementById("initial-message");
+            initialMessage.classList.remove("slide-up");
+            initialMessage.classList.add("slide-down");
+            setTimeout(() => {
+                $("#messages").html(`
+                    <div class="message bot slide-up">
+                        Select a language:<br>
+                        <span class="lang-option" onclick="selectLanguage('en')">English</span><br>
+                        <span class="lang-option" onclick="selectLanguage('hi')">हिन्दी</span><br>
+                        <span class="lang-option" onclick="selectLanguage('ur')">اردو</span><br>
+                        <span class="lang-option" onclick="selectLanguage('sa')">संस्कृतम्</span><br>
+                        <span class="lang-option" onclick="selectLanguage('bho')">भोजपुरी</span><br>
+                        <span class="lang-option" onclick="selectLanguage('es')">Español</span><br>
+                        <span class="lang-option" onclick="selectLanguage('fr')">Français</span><br>
+                        <span class="lang-option" onclick="selectLanguage('de')">Deutsch</span><br>
+                        <span class="lang-option" onclick="selectLanguage('ja')">日本語</span>
+                    </div>
+                `);
+            }, 300);
+        }
+
+        function selectLanguage(lang) {
+            selectedLang = lang;
+            const welcomeMessages = {
+                'en': 'Language selected! How may I assist you today?',
+                'hi': 'भाषा चयनित हुई! मैं आज आपकी कैसे सहायता कर सकता हूँ?',
+                'ur': 'زبان منتخب ہوگئی! میں آج آپ کی کس طرح مدد کر سکتا ہوں؟',
+                'sa': 'भाषा संनादति! अद्य भवतः कथं सहायामि?',
+                'es': '¡Idioma seleccionado! ¿Cómo puedo ayudarte hoy?',
+                'fr': 'Langue sélectionnée ! Comment puis-je vous aider aujourd’hui ?',
+                'de': 'Sprache ausgewählt! Wie kann ich Ihnen heute helfen?',
+                'ja': '言語が選択されました！今日はどのようにお手伝いしましょうか？',
+                'bho': 'भाषा चुनल गइल! हम आज का मदद कर सकीला?'
+            };
+            const welcomeMessage = welcomeMessages[lang] || 'Language selected! How may I assist you today?';
+            const time = getCurrentTime();
+
+            $("#messages").empty();
+            $("#messages").append(`
+                <div class="message bot slide-up">
+                    ${welcomeMessage}
+                    <span class='timestamp'>${time}</span>
+                    <br><br>
+                    <span class="mode-option" onclick="startMode('chat')">Chat</span>
+                    <span class="mode-option" onclick="startMode('faq')">FAQ</span>
+                    <span class="mode-option" onclick="startMode('form')">Submit Form</span>
+                </div>
+            `);
+            $("#user_input").prop('disabled', true);
+            $("#messages").scrollTop($("#messages")[0].scrollHeight);
+            speak(welcomeMessage);
+        }
+
+        function startMode(mode) {
+            selectedMode = mode;
+            $("#messages").empty();
+            const time = getCurrentTime();
+
+            const modeMessages = {
+                'chat': {
+                    'en': 'Chat started! How can I assist you?',
+                    'hi': 'चैट शुरू! मैं आपकी कैसे मदद कर सकता हूँ?',
+                    'ur': 'چیٹ شروع! میں آپ کی کس طرح مدد کر سکتا ہوں؟',
+                    'sa': 'संनादनं प्रारभति! कथं भवतः सहायामि?',
+                    'es': '¡Chat iniciado! ¿Cómo puedo ayudarte?',
+                    'fr': 'Chat démarré ! Comment puis-je vous aider ?',
+                    'de': 'Chat gestartet! Wie kann ich Ihnen helfen?',
+                    'ja': 'チャット開始！どのようにお手伝いしましょうか？',
+                    'bho': 'चैट शुरू भइल! हम का मदद कर सकीला?'
+                },
+                'faq': {
+                    'en': 'FAQ mode started! Select a question:',
+                    'hi': 'FAQ मोड शुरू! एक प्रश्न चुनें:',
+                    'ur': 'FAQ موڈ شروع! ایک سوال منتخب کریں:',
+                    'sa': 'FAQ मोडः प्रारभति! एकं प्रश्नं चिनोतु:',
+                    'es': '¡Modo FAQ iniciado! Selecciona una pregunta:',
+                    'fr': 'Mode FAQ démarré ! Sélectionnez une question :',
+                    'de': 'FAQ-Modus gestartet! Wählen Sie eine Frage:',
+                    'ja': 'FAQモード開始！質問を選んでください：',
+                    'bho': 'FAQ मोड शुरू भइल! एकटा सवाल चुनs:'
+                },
+                'form': {
+                    'en': 'Form submission started! Please provide your details.',
+                    'hi': 'फॉर्म सबमिशन शुरू! कृपया अपना विवरण दें।',
+                    'ur': 'فارم جمع کرانا شروع! براہ کرم اپنی تفصیلات دیں۔',
+                    'sa': 'प्रपत्रजमा प्रारभति! कृपया भवतः विवरणं ददातु।',
+                    'es': '¡Envío de formulario iniciado! Por favor, proporciona tus detalles.',
+                    'fr': 'Soumission de formulaire démarrée ! Veuillez fournir vos détails.',
+                    'de': 'Formularübermittlung gestartet! Bitte geben Sie Ihre Details an.',
+                    'ja': 'フォーム送信開始！詳細を教えてください。',
+                    'bho': 'फॉर्म जमा शुरू भइल! आपन विवरण दीं।'
+                }
+            };
+
+            const modeMessage = modeMessages[mode][selectedLang] || modeMessages[mode]['en'];
+
+            if (mode === 'faq') {
+                fetchFAQData(() => {
+                    $("#messages").append(`
+                        <div class="message bot slide-up" id="faq-initial">
+                            ${modeMessage}<br>
+                            ${Object.keys(faqData).slice(0, 3).map(id => `
+                                <span class="faq-option" onclick="selectFAQ('${id}')">${faqData[id].question[selectedLang] || faqData[id].question['en']}</span>
+                            `).join('<br>')}
+                            <span class="more-option" onclick="showMoreFAQs('faq-initial')">More...</span>
+                            <span class='timestamp'>${time}</span>
+                        </div>
+                    `);
+                    $("#user_input").prop('disabled', true);
+                    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+                });
+            } else if (mode === 'form') {
+                $("#messages").append(`
+                    <div class="message bot slide-up">
+                        ${modeMessage}
+                        <span class='timestamp'>${time}</span>
+                    </div>
+                `);
+                $("#user_input").prop('disabled', false);
+                startFormSubmission();
+            } else {
+                $("#messages").append(`
+                    <div class="message bot slide-up">
+                        ${modeMessage}
+                        <span class='timestamp'>${time}</span>
+                    </div>
+                `);
+                $("#user_input").prop('disabled', false);
+            }
+            $("#messages").scrollTop($("#messages")[0].scrollHeight);
+            speak(modeMessage);
+        }
+
+        function fetchFAQData(callback) {
+            $.ajax({
+                url: "/faq-data",
+                type: "GET",
+                success: function(response) {
+                    faqData = response;
+                    if (callback) callback();
+                },
+                error: function(xhr) {
+                    $("#messages").append(`
+                        <div class="message bot slide-up">
+                            Error fetching FAQ data: ${xhr.responseText || 'Could not connect'}
+                            <span class='timestamp'>${getCurrentTime()}</span>
+                        </div>
+                    `);
+                    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+                }
+            });
+        }
+
+        function showMoreFAQs(divId) {
+            const faqDiv = document.getElementById(divId);
+            if (!faqDiv) return;
+
+            faqDiv.classList.remove("slide-up");
+            faqDiv.classList.add("slide-down");
+            setTimeout(() => {
+                faqDiv.innerHTML = `
+                    <br>Select another question:<br>
+                    ${Object.keys(faqData).slice(3).map(id => `
+                        <span class="faq-option" onclick="selectFAQ('${id}')">${faqData[id].question[selectedLang] || faqData[id].question['en']}</span>
+                    `).join('<br>')}
+                    <span class='timestamp'>${getCurrentTime()}</span>
+                `;
+                faqDiv.classList.remove("slide-down");
+                faqDiv.classList.add("slide-up");
+                $("#messages").scrollTop($("#messages")[0].scrollHeight);
+            }, 300);
+        }
+
+        function selectFAQ(questionId) {
+            if (isTyping) return;
+            isTyping = true;
+
+            const question = faqData[questionId].question[selectedLang] || faqData[questionId].question['en'];
+            const time = getCurrentTime();
+
+            $(".faq-option").addClass('disabled');
+            $("#messages").append(`
+                <div class="message user">
+                    Selected: ${question}
+                    <span class='timestamp'>${time}</span>
+                </div>
+                <div class="typing-indicator" id="loading_${questionId}">Loading...</div>
+            `);
+            $("#messages").scrollTop($("#messages")[0].scrollHeight);
+
+            $.ajax({
+                url: "/faq",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ question_id: questionId, lang: selectedLang }),
+                success: function(response) {
+                    $(`#loading_${questionId}`).remove();
+                    $("#messages").append(`
+                        <div class="message bot slide-up">
+                            ${response.response}
+                            <span class='timestamp'>${getCurrentTime()}</span>
+                            <br><br>
+                            ${Object.keys(faqData).slice(0, 3).map(id => `
+                                <span class="faq-option" onclick="selectFAQ('${id}')">${faqData[id].question[selectedLang] || faqData[id].question['en']}</span>
+                            `).join('<br>')}
+                            <span class="more-option" onclick="showMoreFAQs('faq-initial')">More...</span>
+                        </div>
+                    `);
+                    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+                    $(".faq-option").removeClass('disabled');
+                    isTyping = false;
+                    speak(response.response);
+                },
+                error: function(xhr) {
+                    $(`#loading_${questionId}`).remove();
+                    $("#messages").append(`
+                        <div class="message bot slide-up">
+                            Error: ${xhr.responseText || 'Could not fetch FAQ'}
+                            <span class='timestamp'>${getCurrentTime()}</span>
+                        </div>
+                    `);
+                    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+                    $(".faq-option").removeClass('disabled');
+                    isTyping = false;
+                }
+            });
+        }
+
+        function startFormSubmission() {
+            $.ajax({
+                url: "/submit-form",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ lang: selectedLang }),
+                success: function(response) {
+                    if (!response || typeof response !== 'object' || !response.message) {
+                        throw new Error("Invalid response format: " + JSON.stringify(response));
+                    }
+                    formSessionId = response.session_id || null;
+                    if (!formSessionId) {
+                        console.warn("No session_id received from server");
+                    }
+                    $("#messages").append(`
+                        <div class="message bot slide-up">
+                            ${response.message}
+                            <span class='timestamp'>${getCurrentTime()}</span>
+                        </div>
+                    `);
+                    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+                    speak(response.message);
+                },
+                error: function(xhr) {
+                    const errorMsg = xhr.responseText ?
+                        `Error: ${xhr.responseText}` :
+                        "Error: Could not start form submission";
+                    $("#messages").append(`
+                        <div class="message bot slide-up">
+                            ${errorMsg}
+                            <span class='timestamp'>${getCurrentTime()}</span>
+                        </div>
+                    `);
+                    $("#messages").scrollTop($("#messages")[0].scrollHeight);
+                    console.error("Form submission start failed:", xhr.status, xhr.responseText);
+                }
+            });
+        }
+
+        function sendMessage() {
+            const userInput = $("#user_input");
+            const message = userInput.val().trim();
+            if (!message) return;
+
+            const messages = $("#messages");
+            const time = getCurrentTime();
+
+            if (selectedMode === 'chat') {
+                messages.append(`
+                    <div class="message user">
+                        ${message}
+                        <span class='timestamp'>${time}</span>
+                    </div>
+                `);
+                userInput.val("");
+
+                messages.append(`
+                    <div class="typing-indicator" id="typing">Typing...</div>
+                `);
+                messages.scrollTop(messages[0].scrollHeight);
+
+                $.ajax({
+                    url: "/chat",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ message: message, lang: selectedLang }),
+                    success: function(response) {
+                        $("#typing").remove();
+                        messages.append(`
+                            <div class="message bot slide-up">
+                                ${response.response || 'No response received'}
+                                <span class='timestamp'>${getCurrentTime()}</span>
+                            </div>
+                        `);
+                        messages.scrollTop(messages[0].scrollHeight);
+                        speak(response.response || 'No response received');
+                    },
+                    error: function(xhr) {
+                        $("#typing").remove();
+                        messages.append(`
+                            <div class="message bot slide-up">
+                                Error: ${xhr.responseText || 'Could not connect'}
+                                <span class='timestamp'>${getCurrentTime()}</span>
+                            </div>
+                        `);
+                        messages.scrollTop(messages[0].scrollHeight);
+                    }
+                });
+            } else if (selectedMode === 'form' && formSessionId) {
+                messages.append(`
+                    <div class="message user">
+                        ${message}
+                        <span class='timestamp'>${time}</span>
+                    </div>
+                `);
+                userInput.val("");
+
+                messages.append(`
+                    <div class="typing-indicator" id="typing">Processing...</div>
+                `);
+                messages.scrollTop(messages[0].scrollHeight);
+
+                if (message === "upload" && $("#messages").find(".message.bot:last").text().includes("upload a file")) {
+                    messages.find("#typing").remove();
+                    messages.append(`
+                        <div class="message bot slide-up">
+                            Please select a file:
+                            <div class="file-input-container">
+                                <input type="file" id="formFile" onchange="uploadFile('${formSessionId}')">
+                            </div>
+                            <span class='timestamp'>${getCurrentTime()}</span>
+                        </div>
+                    `);
+                    messages.scrollTop(messages[0].scrollHeight);
+                    return;
+                }
+
+                $.ajax({
+                    url: "/submit-form",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ session_id: formSessionId, input: message, lang: selectedLang }),
+                    success: function(response) {
+                        $("#typing").remove();
+                        if (!response || typeof response !== 'object' || !response.message) {
+                            throw new Error("Invalid response format: " + JSON.stringify(response));
+                        }
+                        messages.append(`
+                            <div class="message bot slide-up">
+                                ${response.message}
+                                <span class='timestamp'>${getCurrentTime()}</span>
+                            </div>
+                        `);
+                        messages.scrollTop(messages[0].scrollHeight);
+                        speak(response.message);
+
+                        if (response.message.includes("successfully") || response.message.includes("canceled")) {
+                            formSessionId = null;
+                            selectedMode = null;
+                            setTimeout(resetToLanguageSelection, 2000);
+                        }
+                    },
+                    error: function(xhr) {
+                        $("#typing").remove();
+                        const errorMsg = xhr.responseText ?
+                            `Error: ${xhr.responseText}` :
+                            "Error: Could not process form input";
+                        messages.append(`
+                            <div class="message bot slide-up">
+                                ${errorMsg}
+                                <span class='timestamp'>${getCurrentTime()}</span>
+                            </div>
+                        `);
+                        messages.scrollTop(messages[0].scrollHeight);
+                        console.error("Form submission failed:", xhr.status, xhr.responseText);
+                    }
+                });
+            }
+        }
+
+        function uploadFile(sessionId) {
+            const fileInput = document.getElementById("formFile");
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Data = e.target.result.split(',')[1];
+                const messages = $("#messages");
+                const time = getCurrentTime();
+
+                messages.append(`
+                    <div class="message user">
+                        File uploaded: ${file.name}
+                        <span class='timestamp'>${time}</span>
+                    </div>
+                    <div class="typing-indicator" id="typing">Processing...</div>
+                `);
+                messages.scrollTop(messages[0].scrollHeight);
+
+                $.ajax({
+                    url: "/submit-form",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({ session_id: sessionId, input: base64Data, lang: selectedLang }),
+                    success: function(response) {
+                        $("#typing").remove();
+                        if (!response || typeof response !== 'object' || !response.message) {
+                            throw new Error("Invalid response format: " + JSON.stringify(response));
+                        }
+                        messages.append(`
+                            <div class="message bot slide-up">
+                                ${response.message}
+                                <span class='timestamp'>${getCurrentTime()}</span>
+                            </div>
+                        `);
+                        messages.scrollTop(messages[0].scrollHeight);
+                        speak(response.message);
+
+                        if (response.message.includes("successfully") || response.message.includes("canceled")) {
+                            formSessionId = null;
+                            selectedMode = null;
+                            setTimeout(resetToLanguageSelection, 2000);
+                        }
+                    },
+                    error: function(xhr) {
+                        $("#typing").remove();
+                        const errorMsg = xhr.responseText ?
+                            `Error: ${xhr.responseText}` :
+                            "Error: Could not upload file";
+                        messages.append(`
+                            <div class="message bot slide-up">
+                                ${errorMsg}
+                                <span class='timestamp'>${getCurrentTime()}</span>
+                            </div>
+                        `);
+                        messages.scrollTop(messages[0].scrollHeight);
+                        console.error("File upload failed:", xhr.status, xhr.responseText);
+                    }
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function speak(text) {
+            const speechLangMap = {
+                'en': 'en-US', 'hi': 'hi-IN', 'ur': 'ur-PK', 'sa': 'sa-IN',
+                'es': 'es-ES', 'fr': 'fr-FR', 'de': 'de-DE', 'ja': 'ja-JP',
+                'bho': 'hi-IN'
+            };
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = speechLangMap[selectedLang] || 'en-US';
+            utterance.rate = 1;
+            synthesis.speak(utterance);
+        }
+
+        $(document).ready(function() {
+            resetToLanguageSelection();
+            $("#user_input").prop('disabled', true); // Disable input until mode is selected
+        });
+    </script>
+</body>
+</html>

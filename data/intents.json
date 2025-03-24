@@ -1,0 +1,109 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hello", "Hi", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello!", "Hi there!", "Hey!", "Greetings!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you later", "Take care"],
+      "responses": ["Goodbye!", "See you soon!", "Take care!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "I appreciate it"],
+      "responses": ["You're welcome!", "No problem!", "Glad to help!"]
+    },
+    {
+      "tag": "greeting",
+      "patterns": ["Hello", "Hi", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello!", "Hi there!", "Hey!", "Greetings!"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you later", "Take care"],
+      "responses": ["Goodbye!", "See you soon!", "Take care!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "I appreciate it"],
+      "responses": ["You're welcome!", "No problem!", "Glad to help!"]
+    },
+    {
+      "tag": "study_help",
+      "patterns": ["I need help studying", "Can you help me with my study?", "I am struggling with my studies", "I need study tips"],
+      "responses": ["Of course! What subject do you need help with?", "I'm happy to help! What are you studying?", "Let me know what you're studying, and I can guide you."]
+    },
+    {
+      "tag": "homework_help",
+      "patterns": ["Can you help me with my homework?", "I need homework assistance", "I'm stuck on my homework", "Please help me with my assignment"],
+      "responses": ["What is the homework about?", "Sure! Tell me the topic, and I'll help you out.", "I'm here to help with your homework. What do you need assistance with?"]
+    },
+    {
+      "tag": "motivation",
+      "patterns": ["I need some motivation", "Can you motivate me?", "Feeling unmotivated", "I don't feel like studying"],
+      "responses": ["You can do this! Just take it one step at a time.", "Believe in yourself! You've got this.", "Stay positive, and remember your goals."]
+    },
+    {
+      "tag": "time_management",
+      "patterns": ["How can I manage my time better?", "Any tips for better time management?", "I'm bad at managing my time", "How do I organize my time?"],
+      "responses": ["Try breaking your tasks into smaller chunks.", "Set realistic goals and prioritize important tasks.", "Create a daily schedule to help stay on track."]
+    },
+    {
+      "tag": "exam_preparation",
+      "patterns": ["How should I prepare for exams?", "Any tips for exam success?", "I need help preparing for my exams", "What is the best way to study for exams?"],
+      "responses": ["Start early and review regularly.", "Take breaks between study sessions to avoid burnout.", "Focus on understanding the concepts, not just memorizing."]
+    },
+    {
+      "tag": "study_break",
+      "patterns": ["I need a break", "Can I take a break?", "How long should I take a break?", "I've been studying for too long"],
+      "responses": ["Take a 5-10 minute break to recharge.", "Short breaks can boost your focus! Relax for a bit.", "Stretch, walk around, and come back refreshed."]
+    },
+    {
+      "tag": "subject_help",
+      "patterns": ["Can you help with math?", "I need help with science", "I am having trouble with English", "Can you explain history to me?"],
+      "responses": ["What specifically in math do you need help with?", "Tell me the science topic you're struggling with.", "I can explain that! What part of English are you working on?", "Let's talk about history! What's the specific topic?"]
+    },
+    {
+      "tag": "study_resources",
+      "patterns": ["Can you suggest study resources?", "Where can I find study materials?", "I need study guides", "What resources can I use to study better?"],
+      "responses": ["I can recommend websites, textbooks, or video resources depending on the subject!", "For study materials, try websites like Khan Academy or Coursera.", "I recommend looking into online courses and open textbooks for better understanding."]
+    },
+    {
+      "tag": "memory_tips",
+      "patterns": ["How can I improve my memory?", "I need tips for better memory retention", "Any memory tricks?", "How do I remember more for exams?"],
+      "responses": ["Try active recall and spaced repetition for better memory.", "Break information into smaller chunks to make it easier to remember.", "Practice visualizing concepts and relating them to real-life examples."]
+    },
+    {
+      "tag": "stress_management",
+      "patterns": ["I'm feeling stressed", "How can I manage stress?", "I'm overwhelmed with my studies", "I'm so stressed out"],
+      "responses": ["Take a deep breath and prioritize your tasks.", "Try exercising or meditating to relieve stress.", "Don't forget to take breaks and stay hydrated."]
+    },
+    {
+      "tag": "subject_math",
+      "patterns": ["How do I solve this math problem?", "Can you explain this math concept?", "I need help with algebra", "I don't understand calculus"],
+      "responses": ["What specific math problem are you working on?", "I can explain algebra, calculus, or other math topics! Let me know what you're struggling with.", "Try breaking the equation into smaller steps to understand it better."]
+    },
+    {
+      "tag": "subject_science",
+      "patterns": ["Can you explain physics?", "I need help with chemistry", "What is the theory of relativity?", "Tell me about cell biology"],
+      "responses": ["What specific area of science do you need help with?", "For chemistry, I can help with reactions, the periodic table, and more.", "The theory of relativity is about the relationship between space and time. Would you like a detailed explanation?"]
+    },
+    {
+      "tag": "subject_history",
+      "patterns": ["Tell me about World War II", "What caused the French Revolution?", "Explain the Renaissance period", "I don't understand this historical concept"],
+      "responses": ["The French Revolution was caused by social inequality, economic crisis, and political unrest.", "World War II started due to geopolitical tensions and the rise of dictatorships.", "The Renaissance was a cultural rebirth after the Middle Ages, focusing on art, literature, and science."]
+    },
+    {
+      "tag": "subject_english",
+      "patterns": ["How do I improve my English?", "Can you help me with grammar?", "I need help with English literature", "What is a metaphor?"],
+      "responses": ["Reading more books and practicing speaking English can help.", "I can help with grammar rules like tenses, articles, and punctuation.", "A metaphor is a figure of speech that compares two things without using 'like' or 'as'."]
+    },
+    {
+      "tag": "subject_geography",
+      "patterns": ["What is the capital of France?", "Tell me about the geography of Africa", "Where is the Amazon Rainforest located?", "What is the tallest mountain in the world?"],
+      "responses": ["The capital of France is Paris.", "The Amazon Rainforest is located in South America, mainly in Brazil.", "Mount Everest is the tallest mountain in the world."]
+    }
+  ]
+}

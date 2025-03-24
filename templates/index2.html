@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Jethat Cyber Security</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="chat-icon" onclick="toggleChat()">💬</div>
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            <span>AI Assistant - Jethat Cyber Security</span>
+            <span class="close-btn" onclick="toggleChat()">✕</span>
+        </div>
+        <div class="chat-body" id="messages">
+            <div class="message bot">
+                <h1>Hi! I’m here to assist you.</h1><br>
+                Choose a language:<br>
+                <span class="lang-option" onclick="selectLanguage('en')">English</span><br>
+                <span class="lang-option" onclick="selectLanguage('hi')">हिन्दी</span><br>
+                <span class="lang-option" onclick="selectLanguage('ur')">اردو</span><br>
+                <span class="more-option" onclick="showMoreLanguages()">More...</span>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user_input" placeholder="Type a message..." onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
