@@ -6,3 +6,4 @@ torchaudio
 numpy
 nltk
 deep-translator
+gunicorn
